@@ -66,19 +66,19 @@
     }
 
     if (yStep == 0.0) {
-        PNChartLabel *minLabel = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, (NSInteger)_chartCavanHeight, (NSInteger)_chartMargin, (NSInteger)_yLabelHeight)];
+        PNChartLabel *minLabel = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, (NSInteger)_chartCavanHeight, (NSInteger)_chartMargin + 5, (NSInteger)_yLabelHeight)];
         minLabel.text = [self formatYLabel:0.0];
         [self setCustomStyleForYLabel:minLabel];
         [self addSubview:minLabel];
         [_yChartLabels addObject:minLabel];
 
-        PNChartLabel *midLabel = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, (NSInteger)(_chartCavanHeight / 2), (NSInteger)_chartMargin, (NSInteger)_yLabelHeight)];
+        PNChartLabel *midLabel = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, (NSInteger)(_chartCavanHeight / 2), (NSInteger)_chartMargin + 5, (NSInteger)_yLabelHeight)];
         midLabel.text = [self formatYLabel:_yValueMax];
         [self setCustomStyleForYLabel:midLabel];
         [self addSubview:midLabel];
         [_yChartLabels addObject:midLabel];
 
-        PNChartLabel *maxLabel = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, 0.0, (NSInteger)_chartMargin, (NSInteger)_yLabelHeight)];
+        PNChartLabel *maxLabel = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, 0.0, (NSInteger)_chartMargin + 5, (NSInteger)_yLabelHeight)];
         maxLabel.text = [self formatYLabel:_yValueMax * 2];
         [self setCustomStyleForYLabel:maxLabel];
         [self addSubview:maxLabel];
@@ -90,7 +90,7 @@
 
         while (num > 0)
         {
-            PNChartLabel *label = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, (NSInteger)(_chartCavanHeight - index * yStepHeight), (NSInteger)_chartMargin, (NSInteger)_yLabelHeight)];
+            PNChartLabel *label = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, (NSInteger)(_chartCavanHeight - index * yStepHeight), (NSInteger)_chartMargin + 5, (NSInteger)_yLabelHeight)];
             [label setTextAlignment:NSTextAlignmentRight];
             label.text = [self formatYLabel:_yValueMin + (yStep * index)];
             [self setCustomStyleForYLabel:label];
