@@ -334,22 +334,22 @@
         chartLine.path = progressline.CGPath;
         pointLayer.path = pointPath.CGPath;
 
-        [CATransaction begin];
-        CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        pathAnimation.duration = 1.0;
-        pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        pathAnimation.fromValue = @0.0f;
-        pathAnimation.toValue   = @1.0f;
-
-        [chartLine addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
+//        [CATransaction begin];
+//        CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+//        pathAnimation.duration = 1.0;
+//        pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//        pathAnimation.fromValue = @0.0f;
+//        pathAnimation.toValue   = @1.0f;
+//
+//        [chartLine addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
         chartLine.strokeEnd = 1.0;
 
         // if you want cancel the point animation, conment this code, the point will show immediately
-        if (chartData.inflexionPointStyle != PNLineChartPointStyleNone) {
-            [pointLayer addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
-        }
+//        if (chartData.inflexionPointStyle != PNLineChartPointStyleNone) {
+//            [pointLayer addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
+//        }
 
-        [CATransaction commit];
+//        [CATransaction commit];
 
         UIGraphicsEndImageContext();
     }
