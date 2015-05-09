@@ -104,6 +104,11 @@
             [self addSubview:maxLabel];
         }
         maxLabel.text = [self formatYLabel:_yValueMax * 2];
+        
+        for (NSInteger index = 3; index < _yChartLabels.count; index++) {
+            PNChartLabel *label = _yChartLabels[index];
+            label.text = @"";
+        }
     } else {
         NSInteger index = 0;
         NSInteger num = _yLabelNum + 1;
